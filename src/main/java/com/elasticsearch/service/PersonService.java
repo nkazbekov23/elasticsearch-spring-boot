@@ -78,6 +78,17 @@ public class PersonService {
         return searchInternal(request);
     }
 
+    public List<Person> getAllPersonCreatedSince(final SearchRequestDto dto, final Date date) {
+
+        final SearchRequest request =
+                SearchUtil.buildSearchRequest("person", dto, date);
+        if (request == null) {
+            return Collections.emptyList();
+        }
+
+        return searchInternal(request);
+    }
+
 
 
 

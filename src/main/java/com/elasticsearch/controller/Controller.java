@@ -50,4 +50,12 @@ public class Controller {
         return personService.getAllPersonCreatedSince(date);
     }
 
+    @GetMapping("/q/since/{date}")
+    public List<Person> getAllPersonCreatedDateSince(
+            @PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") Date date,
+            @RequestBody SearchRequestDto dto) {
+        return personService.getAllPersonCreatedSince(dto, date);
+    }
+
+
 }
