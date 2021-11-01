@@ -59,7 +59,11 @@ public class PersonService {
     }
 
 
-
+    /**
+     * use search for person based on data provided the {@link SearchRequestDto}
+     * @param  dto containing info about what to search.
+     * @return list of found person
+     */
     public List<Person> search(final SearchRequestDto dto) {
 
         final SearchRequest request =
@@ -68,6 +72,12 @@ public class PersonService {
         return searchInternal(request);
     }
 
+
+    /**
+     * used get all person that have created since forwarded date
+     * @param date
+     * @return return all person since forwarded date
+     */
     public List<Person> getAllPersonCreatedSince(final Date date) {
 
         final SearchRequest request =
@@ -78,6 +88,12 @@ public class PersonService {
         return searchInternal(request);
     }
 
+    /**
+     *
+     * @param dto
+     * @param date
+     * @return
+     */
     public List<Person> getAllPersonCreatedSince(final SearchRequestDto dto, final Date date) {
 
         final SearchRequest request =
